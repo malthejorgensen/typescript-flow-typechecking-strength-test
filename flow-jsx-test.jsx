@@ -3,6 +3,17 @@
 import * as React from 'react'
 import type { Answer, Question, ReportGrade, Section } from 'models'
 
+/*
+
+   I believe the problem here is type checking the returned object from
+   a `reduce`-call.
+   
+   flow's typing of `reduce` can be found here:
+   https://github.com/facebook/flow/blob/fa77d91c52ecc68d17ff0c82c94613abbb10499b/lib/core.js#L239
+   
+*/
+
+
 const ReactToFeedbackQuestion = ({ idx, numQuestions, question, answer, name }: {
   idx: number,
   numQuestions: number,
